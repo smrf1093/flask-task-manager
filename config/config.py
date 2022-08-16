@@ -1,0 +1,22 @@
+from dotenv import load_dotenv
+import os 
+
+load_dotenv('../.env')
+
+class DevelopmentConfig(object):
+    SQLALCHEMY_DATABASE_URI = os.getenv("SQLALCHEMY_DATABASE_URI")
+    SQLALCHEMY_TRACK_MODIFICATIONS=os.getenv("SQLALCHEMY_TRACK_MODIFICATIONS")
+    FLASK_ADMIN_SWATCH=os.getenv("SQLALCHEMY_TRACK_MODIFICATIONS")
+    USER_EMAIL_SENDER_EMAIL=os.getenv("USER_EMAIL_SENDER_EMAIL")
+    SECRET_KEY = os.getenv("SECRET_KEY")
+
+
+class TestConfig(object):
+    SQLALCHEMY_DATABASE_URI = "sqlite:///test_database.db"
+    SQLALCHEMY_TRACK_MODIFICATIONS=os.getenv("SQLALCHEMY_TRACK_MODIFICATIONS")
+    FLASK_ADMIN_SWATCH=os.getenv("SQLALCHEMY_TRACK_MODIFICATIONS")
+    USER_EMAIL_SENDER_EMAIL=os.getenv("USER_EMAIL_SENDER_EMAIL")
+    SECRET_KEY = os.getenv("SECRET_KEY")
+    TESTING = True
+
+

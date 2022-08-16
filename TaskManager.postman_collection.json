@@ -1,0 +1,369 @@
+{
+	"info": {
+		"_postman_id": "d96d5a14-722a-411b-82b2-4858b0303351",
+		"name": "TaskManager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8567724"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "manager1@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "role",
+							"value": "000010",
+							"description": "Developer",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "testpass",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/users/register/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "manager1@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "testpass",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/users/login/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Project",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwdWJsaWNfaWQiOiJlNDY0N2VjYi1mMTM2LTQ5YWUtOWQzZi0yNWFkNDQ4Y2EzNWUiLCJleHAiOjE2NjA2NzIyNjF9.6lGDfADvUXf5H9GUKu-_t4g8eRl7Keil8itfHAF0w4s",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Project 5",
+							"type": "text"
+						},
+						{
+							"key": "owner_email",
+							"value": "developer@gmail.com",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "participants_emails",
+							"value": "developer3@gmail.com, manager1@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/projects/create/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"projects",
+						"create",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Project List",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwdWJsaWNfaWQiOiJlNDY0N2VjYi1mMTM2LTQ5YWUtOWQzZi0yNWFkNDQ4Y2EzNWUiLCJleHAiOjE2NjA2NzIyNjF9.6lGDfADvUXf5H9GUKu-_t4g8eRl7Keil8itfHAF0w4s",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/projects/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"projects",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Task",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwdWJsaWNfaWQiOiJlNDY0N2VjYi1mMTM2LTQ5YWUtOWQzZi0yNWFkNDQ4Y2EzNWUiLCJleHAiOjE2NjA2NzIyNjF9.6lGDfADvUXf5H9GUKu-_t4g8eRl7Keil8itfHAF0w4s",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "test task for developer 2",
+							"type": "text"
+						},
+						{
+							"key": "due_date",
+							"value": "2022-10-10",
+							"type": "text"
+						},
+						{
+							"key": "assignee_id",
+							"value": "9b39e12e-d117-44ec-abcf-5add2cde8992",
+							"type": "text"
+						},
+						{
+							"key": "project_id",
+							"value": "07527bbf-2890-43f8-adf1-989f2ec88672",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/tasks/create/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"tasks",
+						"create",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Task List",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwdWJsaWNfaWQiOiJjODQ1ZWUwZC04NmUzLTQ3YjEtYTMyMS01MDgwNjdjOWIxOTIiLCJleHAiOjE2NjA2NzQwNzd9.RkJuGsl4Tedd1oSCSzExAgPj2sR_A7NeRFj7JYaZl7w",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/tasks/?project_id=07527bbf-2890-43f8-adf1-989f2ec88672",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"tasks",
+						""
+					],
+					"query": [
+						{
+							"key": "project_id",
+							"value": "07527bbf-2890-43f8-adf1-989f2ec88672"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Task Update",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwdWJsaWNfaWQiOiJjODQ1ZWUwZC04NmUzLTQ3YjEtYTMyMS01MDgwNjdjOWIxOTIiLCJleHAiOjE2NjA2NzQwNzd9.RkJuGsl4Tedd1oSCSzExAgPj2sR_A7NeRFj7JYaZl7w",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "new title",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/tasks/create/?task_id=7e3abd6e-bad4-472c-827f-4afb828643f1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"tasks",
+						"create",
+						""
+					],
+					"query": [
+						{
+							"key": "task_id",
+							"value": "7e3abd6e-bad4-472c-827f-4afb828643f1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Task",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwdWJsaWNfaWQiOiJjODQ1ZWUwZC04NmUzLTQ3YjEtYTMyMS01MDgwNjdjOWIxOTIiLCJleHAiOjE2NjA2NzQwNzd9.RkJuGsl4Tedd1oSCSzExAgPj2sR_A7NeRFj7JYaZl7w",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/tasks/delete/?task_id=7e3abd6e-bad4-472c-827f-4afb828643f1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"tasks",
+						"delete",
+						""
+					],
+					"query": [
+						{
+							"key": "task_id",
+							"value": "7e3abd6e-bad4-472c-827f-4afb828643f1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
