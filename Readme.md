@@ -9,16 +9,19 @@ There are some todo commands showing my perspective for project shortcommings, c
 
 ## Permissions in Project 
 
-The permission handling should be completely changed in the project but I just get it running and working correctly. 
+The permission handling should be completely changed in the project but I just get it running and working correctly. Consider the object permission approach does not follow the DRY principle and should be replaced. 
 
+## Validation 
+
+The validation is not sufficient and should be replaced with a Flask third party or completely should be written from scratch but the time for developing this project is limited, so any contribution is welcomed. 
 
 ## New starter 
 
-This project needs some time and effort to be a starter-kit for flask project. 
+This project needs some time and effort to be a starter-kit for flask micro framework. 
 
 ## Why not Django 
 
-Using django serializers and the greate generic views allows handling this project in less than a day, however, I prefer to take some challenges and start it from scratch. 
+Using django serializers and the greate generic views allows handling this project in less than a day, however, I prefer to take some challenges and start it from scratch. Also, permission customization and adding permissions on object level is very much easier on Django side.
 
 # Run 
  Prepare a python environment and install requirements/base.txt
